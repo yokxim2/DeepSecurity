@@ -18,7 +18,10 @@ public class JoinService {
 
     public void joinProcess(JoinDTO joinDTO) {
 
-
+        boolean isUser = userRepository.existsByUsername(joinDTO.getUsername());
+        if (isUser) {
+            return;
+        }
 
         UserEntity data = new UserEntity();
         data.setUsername(joinDTO.getUsername());

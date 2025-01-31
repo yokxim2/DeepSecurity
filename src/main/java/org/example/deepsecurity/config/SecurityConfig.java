@@ -21,6 +21,15 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 );
 
+        http
+                .csrf((auth) -> auth.disable());
+
+        http
+                .formLogin((auth) -> auth.loginPage("/login")
+                        .loginProcessingUrl("loginProc")
+                        .permitAll()
+                );
+
         return http.build();
     }
 }

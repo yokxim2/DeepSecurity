@@ -28,9 +28,6 @@ public class SecurityConfig {
                 );
 
         http
-                .csrf((auth) -> auth.disable());
-
-        http
                 .formLogin((auth) -> auth.loginPage("/login")
                         .loginProcessingUrl("/loginProc")
                         .defaultSuccessUrl("/")

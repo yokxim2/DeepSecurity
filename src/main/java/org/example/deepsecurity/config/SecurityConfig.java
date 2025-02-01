@@ -29,6 +29,12 @@ public class SecurityConfig {
                 ROLE_C > ROLE_B
                 ROLE_B > ROLE_A
                 """);
+
+//        둘 다 사용 가능
+//        return RoleHierarchyImpl.withDefaultRolePrefix()
+//                .role("C").implies("B")
+//                .role("B").implies("A")
+//                .build();
     }
 
     @Bean
